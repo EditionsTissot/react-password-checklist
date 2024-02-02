@@ -1,3 +1,3 @@
-import '@storybook/addon-knobs/register';
-import '@storybook/addon-actions/register';
-import '@pxblue/storybook-rtl-addon/register';
+import '@storybook/addon-knobs';
+import '@storybook/addon-actions';
+import '@pxblue/storybook-rtl-addon';
