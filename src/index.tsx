@@ -55,7 +55,7 @@ const ReactPasswordChecklist: React.FC<ReactPasswordChecklistProps> = ({
 }) => {
 	const [isValid, setIsValid] = useState(false)
 	const ruleDefinitions: {
-		[key in RuleNames]: { valid: boolean; message: string }
+		[key in RuleNames]: { valid: boolean; message: string|React.ReactNode }
 	} = {
 		minLength: {
 			valid: value.length >= (minLength || 100),
