@@ -16,7 +16,7 @@ interface PasswordProps {
 	invalidTextColor?: string
 	onChange?: (isValid: boolean, failedRules: RuleNames[]) => any
 	messages?: {
-		[key in RuleNames]?: string
+		[key in RuleNames]?: string|React.ReactNode
 	}
 	iconComponents?: CustomIconComponents
 }

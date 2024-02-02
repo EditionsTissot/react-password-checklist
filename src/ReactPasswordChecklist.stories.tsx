@@ -109,6 +109,28 @@ storiesOf("ReactPasswordChecklist", module)
 			invalidTextColor={text("Invalid Text Color", "fuchsia")}
 		/>
 	))
+	.add("Custom Messages with html", () => (
+		<ReactPasswordChecklist
+			value={text("Password", "")}
+			valueAgain={text("Password Again", "")}
+			minLength={number("Minimum Length", 8)}
+			onChange={action("onChange")}
+			hideIcon={boolean("Hide Icon", false)}
+			rtl={boolean("rtl", getDirection() == "rtl")}
+			rules={
+				array("Rules", [
+					"minLength",
+					"specialChar",
+					"number",
+					"capital",
+					"match",
+				]) as Array<RuleNames>
+			}
+			messages={{
+				minLength: <span>Password has at least <b>8</b> <span style={{color: 'red'}}>characters.</span></span>,
+			}}
+		/>
+	))
 	.add("Custom Messages", () => (
 		<ReactPasswordChecklist
 			value={text("Password", "")}
